@@ -508,8 +508,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // - drag - перемещение карты при нажатой левой кнопки мыши;
     // - rightMouseButtonMagnifier - увеличение области, выделенной
     // правой кнопкой мыши.
-    .disable(['drag'])
-
     .disable(['scrollZoom']);
   }
+
+  document.querySelectorAll('form').forEach(el => {
+    el.addEventListener('submit', event => {
+      event.preventDefault();
+    })
+  });
 });

@@ -15,6 +15,10 @@ html {
   --color-grey: #999;
   --color-purple: #9D5CD0;
   --color-purple-hover: #C283F3;
+  --color-hover-icon: #D1A9F0;
+  --color-backg-icon: #CACACA;
+  --color-hover-btn: #C283F3;
+  --color-focus-btn: #7943A4;
 }
 
 @font-face {
@@ -150,7 +154,7 @@ img {
   height: 10px;
   margin-right: 15px;
   border-radius: 50%;
-  background: #CACACA;
+  background: var(--color-backg-icon);
 }
 
 /*header*/
@@ -216,16 +220,16 @@ img {
 
 .menu__link:focus {
   outline: none;
-  background-color: #7943A4;
+  background-color: var(--color-focus-btn);
 }
 
 .menu__link:hover {
-  color: #C283F3;
+  color: var(--color-hover-btn);
 }
 
 .menu__link:active {
   background: none;
-  color: #7943A4;
+  color: var(--color-focus-btn);
 }
 
 .login__btn {
@@ -249,15 +253,15 @@ img {
 }
 
 .login__btn:hover {
-  color: #C283F3;
+  color: var(--color-hover-btn);
 }
 
 .login__btn:hover svg path {
-  fill: #C283F3;
+  fill: var(--color-hover-btn);
 }
 
 .login__btn:focus {
-  background: #7943A4;
+  background: var(--color-focus-btn);
   outline: none;
 }
 
@@ -315,7 +319,7 @@ img {
 
 .menu-art__select:focus {
   outline: none;
-  background: #7943A4;
+  background: var(--color-focus-btn);
 }
 
 .menu-art__select:hover  {
@@ -328,7 +332,7 @@ img {
 
 .menu-art__select:active {
   background: none;
-  color: #7943A4;
+  color: var(--color-focus-btn);
 }
 
 .menu-art__select-value {
@@ -417,7 +421,7 @@ img {
 }
 
 .menu-art__select-link:active {
-  outline: 2px solid #D1A9F0;
+  outline: 2px solid var(--color-hover-icon);
   background-color: rgba(194, 131, 243, 0.4);
 }
 
@@ -456,16 +460,16 @@ img {
 }
 
 .search__input:hover {
-  border-bottom: 1px solid #C283F3;
+  border-bottom: 1px solid var(--color-hover-btn);
 }
 
 .search__input:focus {
   outline: none;
-  border-bottom: 1px solid #C283F3;
+  border-bottom: 1px solid var(--color-hover-btn);
 }
 
 .search__input:active {
-  border-bottom: 1px solid #7943A4;
+  border-bottom: 1px solid var(--color-focus-btn);
 }
 
 .search__input::placeholder {
@@ -548,17 +552,17 @@ img {
 }
 
 .hero__btn:hover {
-  outline: 3px solid #D1A9F0;
+  outline: 3px solid var(--color-hover-icon);
 }
 
 .hero__btn:focus {
-  outline: 3px solid #D1A9F0;
+  outline: 3px solid var(--color-hover-icon);
   outline-offset: 5px;
 }
 
 .hero__btn:active {
-  outline: 3px solid #D1A9F0;
-  background-color: #7943A4;
+  outline: 3px solid var(--color-hover-icon);
+  background-color: var(--color-focus-btn);
 }
 
 /*about-us*/
@@ -789,7 +793,7 @@ img {
 }
 
 .slider__btn:hover {
-  background: #7943A4;
+  background: var(--color-focus-btn);
 }
 
 .slider__btn_back {
@@ -970,14 +974,14 @@ img {
   position: relative;
   flex-direction: column;
   border-bottom: 1px solid transparent;
-  border-top: 1px solid #CACACA;
+  border-top: 1px solid var(--color-backg-icon);
   cursor: pointer;
   transition: border .2s ease-in-out,
               background .2s ease-in-out;
 }
 
 .accordion__item:last-child {
-  border-bottom: 1px solid #CACACA;
+  border-bottom: 1px solid var(--color-backg-icon);
 }
 
 .accordion__item:last-child:hover {
@@ -997,7 +1001,7 @@ img {
 }
 
 .accordion__item:hover .accordion__btn {
-  background-color: #D1A9F0;
+  background-color: var(--color-hover-icon);
 }
 
 .accordion__item:focus {
@@ -1010,7 +1014,7 @@ img {
 }
 
 .accordion__item:focus .accordion__btn {
-  background-color: #D1A9F0;
+  background-color: var(--color-hover-icon);
 }
 
 .accordion__row {
@@ -1119,7 +1123,7 @@ img {
 }
 
 .accordion_action .accordion__btn {
-  background: #D1A9F0;
+  background: var(--color-hover-icon);
   border: 2px solid #9D5CD0;
   transform: rotate(180deg);
 }
@@ -1220,7 +1224,7 @@ img {
   flex-direction: column;
   padding: 13px 50px 43px;
   height: 100%;
-  border: 1px solid #CACACA;
+  border: 1px solid var(--color-backg-icon);
   border-top: none;
 }
 
@@ -1265,7 +1269,7 @@ img {
 }
 
 .event__link:hover {
-  color: #7943A4;
+  color: var(--color-focus-btn);
 }
 
 .event__link:focus {
@@ -1307,7 +1311,7 @@ img {
 }
 
 .slider__btn_next_events:hover {
-  background: #D1A9F0;
+  background: var(--color-hover-icon);
 }
 
 .slider__btn_next_events:focus {
@@ -1315,7 +1319,7 @@ img {
 }
 
 .slider__btn_next_events:active {
-  background: #D1A9F0;
+  background: var(--color-hover-icon);
 }
 
 .slider__btn_next_events > svg {
@@ -1364,8 +1368,8 @@ img {
 }
 
 .projects__link:active {
-  color: #7943A4;
-  border-bottom: 1px solid #7943A4;
+  color: var(--color-focus-btn);
+  border-bottom: 1px solid var(--color-focus-btn);
   background: none;
 }
 
@@ -1385,7 +1389,7 @@ img {
 .slider-projects__slide {
   width: 450px;
   height: 150px;
-  outline: 1px solid #CACACA;
+  outline: 1px solid var(--color-backg-icon);
   background-position: center;
   background-repeat: no-repeat;
   filter: grayscale(100%) opacity(50%);
@@ -1455,7 +1459,7 @@ img {
 }
 
 .slider-projects__btn_project:hover {
-  background: #D1A9F0;
+  background: var(--color-hover-icon);
 }
 
 .slider-projects__btn_project:focus {
@@ -1463,7 +1467,7 @@ img {
 }
 
 .slider-projects__btn_project:active {
-  background: #D1A9F0;
+  background: var(--color-hover-icon);
 }
 
 .slider-projects__btn_back {
@@ -1489,7 +1493,7 @@ img {
   flex-wrap: wrap;
   padding-top: 27px;
   padding-bottom: 37px;
-  outline: 1px solid #CACACA;
+  outline: 1px solid var(--color-backg-icon);
 }
 
 .contacts__address {
@@ -1561,18 +1565,18 @@ img {
 }
 
 .feedback__btn:hover {
-  outline: 3px solid #D1A9F0;
+  outline: 3px solid var(--color-hover-icon);
 }
 
 .feedback__btn:focus {
-  outline: 3px solid #D1A9F0;
+  outline: 3px solid var(--color-hover-icon);
   outline-offset: 5px;
 }
 
 .feedback__btn:active {
   color: var(--color-white);
-  outline: 3px solid #D1A9F0;
-  background-color: #7943A4;
+  outline: 3px solid var(--color-hover-icon);
+  background-color: var(--color-focus-btn);
 }
 
 .feedback .just-validate-error-label[data-tooltip=true] {
@@ -1769,7 +1773,7 @@ img {
 }
 
 .tul:hover svg {
-  background: #D1A9F0;
+  background: var(--color-hover-icon);
 }
 
 .tul:focus {
@@ -1777,7 +1781,7 @@ img {
 }
 
 .tul:focus svg {
-  background: #D1A9F0;
+  background: var(--color-hover-icon);
 }
 
 .tul:active svg {
