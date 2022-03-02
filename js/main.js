@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const svg =  select.querySelector('svg');
 
+    const selectSelected = select.querySelector('.select__selected');
+
     select.addEventListener('click', () => {
       selectList.classList.toggle('select__list_active');
       svg.classList.toggle('select__svg_active');
@@ -19,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
       el.addEventListener('click', () => {
         const value = selectValue.textContent;
         selectValue.textContent = el.textContent;
+        selectSelected.textContent = el.textContent;
+        selectSelected.value = el.textContent;
         el.textContent = value;
       })
     })
@@ -128,6 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function accordion() {
     let interval = null;
+    let height = null;
     document.querySelectorAll('.accordion__item').forEach(el => {
       el.querySelector('.accordion__row').addEventListener('click', () => {
         if (!el.classList.contains('accordion_action') && document.querySelector('.accordion_action')) {
@@ -136,12 +141,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const value = el.querySelector('.accordion__row-value');
             const valueList = el.querySelector('.accordion__value');
 
-            value.style.maxHeight = null;
+            // value.style.maxHeight = height + "px";
+            // console.log(value.scrollHeight)
+
+            // value.style.maxHeight = null;
 
             if (valueList.style.visibility === 'visible') {
               interval = setTimeout(() => {
                 valueList.style.visibility = 'hidden';
-              }, 100);
+              }, 199);
             }
           })
         }
@@ -154,16 +162,21 @@ document.addEventListener('DOMContentLoaded', () => {
         if (valueList.style.visibility === 'visible') {
           interval = setTimeout(() => {
             valueList.style.visibility = 'hidden';
-          }, 100);
+          }, 199);
         } else {
           valueList.style.visibility = 'visible';
         }
 
-        if (value.style.maxHeight){
-          value.style.maxHeight = null;
-        } else {
-          value.style.maxHeight = value.scrollHeight + "px";
-        }
+        // if (!value.style.maxHeight){
+        //   height = value.scrollHeight;
+        //   value.style.maxHeight = height + "px";
+        //   setTimeout(() => {
+        //     value.style.maxHeight = '5000px';
+        //   }, 199);
+        // } else {
+        //   value.style.maxHeight = height + "px";
+        //   value.style.maxHeight = null;
+        // }
       })
     })
   }
@@ -489,5 +502,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   myMap.geoObjects
     .add(myPlacemarkWithContent);
+
+  myMap.behaviors
+    // Отключаем некоторые включенные по умолчанию поведения:
+    // - drag - перемещение карты при нажатой левой кнопки мыши;
+    // - rightMouseButtonMagnifier - увеличение области, выделенной
+    // правой кнопкой мыши.
+    .disable(['drag'])
+
+    .disable(['scrollZoom']);
   }
 });
